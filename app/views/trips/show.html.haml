@@ -1,0 +1,4 @@
+%h1= @trip.name
+%p= @trip.date
+- if @trip.hotel
+  %p= "This trip is to #{@trip.hotel.name}"

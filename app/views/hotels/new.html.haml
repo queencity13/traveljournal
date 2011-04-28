@@ -1,0 +1,14 @@
+%h1 New Hotel
+- if flash[:error].present?
+  .error= flash[:error]
+= form_for(@hotel, :remote => true) do |f|
+  %div
+    = f.label :name, 'Hotel Name'
+    = f.text_field :name
+  %div
+    = f.label :description
+    = f.text_area :description, :size => '40x4'
+  %div
+    = f.label :city
+    = f.collection_select(:city_id, @cities, :id, :name)
+  = f.submit 'Save'

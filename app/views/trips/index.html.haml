@@ -1,0 +1,4 @@
+%h1 Trips as of #{day_today}
+%ul#trips
+  - @trips.each do |trip|
+    %li= link_to(trip.name, trip_path(trip)) 
